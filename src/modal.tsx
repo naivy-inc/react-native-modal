@@ -685,7 +685,7 @@ export class ReactNativeModal extends React.Component<ModalProps, State> {
 
     const backdropWrapper = (
       <animatable.View
-        ref={(ref) => (this.backdropRef = ref)}
+        ref={ref => (this.backdropRef = ref)}
         useNativeDriver={useNativeDriver}
         style={[styles.backdrop, backdropComputedStyle]}>
         {hasCustomBackdrop && customBackdrop}
@@ -763,7 +763,7 @@ export class ReactNativeModal extends React.Component<ModalProps, State> {
     const containerView = (
       <animatable.View
         {...panHandlers}
-        ref={(ref) => (this.contentRef = ref)}
+        ref={ref => (this.contentRef = ref)}
         style={[panPosition, computedStyle]}
         pointerEvents="box-none"
         useNativeDriver={useNativeDriver}
@@ -787,12 +787,12 @@ export class ReactNativeModal extends React.Component<ModalProps, State> {
     return (
       //Modal로 할 경우 TextInput 키보드가 제대로 보이지 않는 문제가 있어 View로 변경
       <View
-        transparent={true}
-        animationType={'none'}
+        // transparent={true}
+        // animationType={'none'}
         // visible={this.state.isVisible}
         // onRequestClose={onBackButtonPress}
         style={{
-          transparent: true,
+          // transparent: true,
           top: this.state.isVisible ? 0 : '100%',
           position: 'absolute',
           width: '100%',
